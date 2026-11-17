@@ -1,0 +1,9 @@
+{
+  "name": "创作者投放",
+  "event_kinds": [
+    "exposure",
+    "click",
+    "order",
+    "refund"
+  ]
+}
