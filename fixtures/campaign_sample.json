@@ -1,0 +1,82 @@
+{
+  "recomputed_at": "2026-11-20T09:00:00+00:00",
+  "entities": [
+    {"entity_id": "cust-1", "label": "顾客甲", "group_id": "customer"},
+    {"entity_id": "cust-2", "label": "顾客乙", "group_id": "customer"},
+    {"entity_id": "creator-a", "label": "创作者A", "group_id": "creator"},
+    {"entity_id": "creator-b", "label": "创作者B", "group_id": "creator"},
+    {"entity_id": "creator-c", "label": "创作者C", "group_id": "creator"}
+  ],
+  "aliases": [
+    {"source": "crm", "external_id": "cust-ext-1", "entity_id": "cust-1"},
+    {"source": "crm", "external_id": "cust-ext-2", "entity_id": "cust-2"},
+    {"source": "crm", "external_id": "creator-a", "entity_id": "creator-a"},
+    {"source": "crm", "external_id": "creator-b", "entity_id": "creator-b"},
+    {"source": "crm", "external_id": "creator-c", "entity_id": "creator-c"}
+  ],
+  "campaigns": [
+    {"campaign": "camp-冬促", "budget": "10000", "click_window_days": 7, "exposure_window_days": 1}
+  ],
+  "enrollments": [
+    {"campaign": "camp-冬促", "creator": "creator-a", "share": "0.10"},
+    {"campaign": "camp-冬促", "creator": "creator-b", "share": "0.08"},
+    {"campaign": "camp-冬促", "creator": "creator-c", "share": "0.05"}
+  ],
+  "events": [
+    {"source": "crm", "event_id": "exp-1", "revision": 1, "kind": "exposure", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-01T09:00:00+08:00", "observed_at": "2026-11-01T09:05:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-a"}},
+    {"source": "crm", "event_id": "clk-1", "revision": 1, "kind": "click", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-02T10:00:00+08:00", "observed_at": "2026-11-02T10:01:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-a"}},
+    {"source": "crm", "event_id": "clk-2", "revision": 1, "kind": "click", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-03T10:00:00+08:00", "observed_at": "2026-11-03T10:01:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-b"}},
+    {"source": "crm", "event_id": "ord-1", "revision": 1, "kind": "order", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-04T10:00:00+08:00", "observed_at": "2026-11-04T10:10:00+08:00",
+     "payload": {"campaign": "camp-冬促", "order_id": "order-1", "amount": "1000.00"}},
+
+    {"source": "crm", "event_id": "exp-2", "revision": 1, "kind": "exposure", "entity": "cust-ext-2",
+     "occurred_at": "2026-11-05T09:00:00+08:00", "observed_at": "2026-11-05T09:05:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-a"}},
+    {"source": "crm", "event_id": "clk-3", "revision": 1, "kind": "click", "entity": "cust-ext-2",
+     "occurred_at": "2026-11-06T20:00:00+08:00", "observed_at": "2026-11-06T20:01:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-a"}},
+    {"source": "crm", "event_id": "clk-4", "revision": 1, "kind": "click", "entity": "cust-ext-2",
+     "occurred_at": "2026-11-06T20:00:00+08:00", "observed_at": "2026-11-06T20:01:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-b"}},
+    {"source": "crm", "event_id": "ord-2", "revision": 1, "kind": "order", "entity": "cust-ext-2",
+     "occurred_at": "2026-11-07T11:00:00+08:00", "observed_at": "2026-11-07T11:10:00+08:00",
+     "payload": {"campaign": "camp-冬促", "order_id": "order-2", "amount": "500.00"}},
+
+    {"source": "crm", "event_id": "exp-3", "revision": 1, "kind": "exposure", "entity": "cust-ext-2",
+     "occurred_at": "2026-11-08T09:00:00+08:00", "observed_at": "2026-11-08T09:05:00+08:00",
+     "payload": {"campaign": "camp-冬促", "creator": "creator-c"}},
+    {"source": "crm", "event_id": "ord-3", "revision": 1, "kind": "order", "entity": "cust-ext-2",
+     "occurred_at": "2026-11-08T12:00:00+08:00", "observed_at": "2026-11-08T12:10:00+08:00",
+     "payload": {"campaign": "camp-冬促", "order_id": "order-3", "amount": "300.00"}},
+
+    {"source": "crm", "event_id": "ord-4", "revision": 1, "kind": "order", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-09T12:00:00+08:00", "observed_at": "2026-11-09T12:10:00+08:00",
+     "payload": {"campaign": "camp-冬促", "order_id": "order-4", "amount": "200.00"}},
+
+    {"source": "crm", "event_id": "ref-1", "revision": 1, "kind": "refund", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-10T15:00:00+08:00", "observed_at": "2026-11-10T15:20:00+08:00",
+     "payload": {"order_id": "order-1", "amount": "400.00"}},
+
+    {"source": "crm", "event_id": "ref-2", "revision": 1, "kind": "refund", "entity": "cust-ext-1",
+     "occurred_at": "2026-11-25T15:00:00+08:00", "observed_at": "2026-11-25T15:20:00+08:00",
+     "payload": {"order_id": "order-1", "amount": "200.00"}}
+  ],
+  "resolutions": [
+    {"order_id": "order-2", "resolution": "attributed", "creator": "creator-a",
+     "note": "市场与创作者B协商后确认A的直播为决定性触点", "decided_at": "2026-11-21T10:00:00+00:00"}
+  ],
+  "settlements": [
+    {"settlement_id": "st-2026-11", "period": "2026-11",
+     "watermark": "2026-11-20T12:00:00+00:00", "sealed_at": "2026-11-22T10:00:00+00:00"},
+    {"settlement_id": "st-2026-12", "period": "2026-12",
+     "watermark": "2026-12-31T16:00:00+00:00", "sealed_at": "2027-01-05T10:00:00+00:00"}
+  ],
+  "trace_orders": ["order-1", "order-2"]
+}
